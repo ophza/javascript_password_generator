@@ -5,27 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
+      <!-- Second card used for password critera (removes need for alerts) -->
       <div class="card">
+        <header>
+          <h1>Password Generator</h1>
+        </header>
+        <div class="card">
+          <div class="card-body">
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              aria-label="Generated Password"
+            ></textarea>
+          </div>
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Password Criteria</h2>
         </div>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <form id="passwordLength">
+            <label for="lengthInput">Enter length of password: </label>
+            <input type="text" id="lengthInput">
+          </form>
+          <input type="checkbox" id="lowercaseConfirm" name="lowercaseConfirm" value="true">
+          <labe for="lowercaseConfirm">Lowercase Letters</labe><br>
+          <input type="checkbox" id="uppercaseConfirm" name="uppercaseConfirm" value="true">
+          <labe for="uppercaseConfirm">Uppercase Letters</labe><br>
+          <input type="checkbox" id="numConfirm" name="numConfirm" value="true">
+          <labe for="numConfirm">Numbers</labe><br>
+          <input type="checkbox" id="specCharConfirm" name="specCharConfirm" value="true">
+          <labe for="specCharConfirm">Special Characters</labe><br>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
+          <button id="clear" class="btn">Clear Password</button>
         </div>
       </div>
     </div>
