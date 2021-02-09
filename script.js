@@ -22,7 +22,7 @@ function generatePassword(){
     }
     else{
       alert("Inccorect password length please try again!");
-      location.reload();
+      break;
     }
   }
   var lowercaseConfirm = document.getElementById("lowercaseConfirm").checked;
